@@ -89,6 +89,10 @@ app.get('/movies', (req, res) => {
   res.json(movies);
 });
 
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Uh-oh! Something went wrong!');
+});
 
 // listen for requests
 app.listen(8080, () => {
