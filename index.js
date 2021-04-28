@@ -1,6 +1,6 @@
 const express = require('express'),
 	morgan = require('morgan');
-	
+
 const app = express();
 
 let movies = [
@@ -80,6 +80,8 @@ let movies = [
 app.get('/', (req, res) => {
   res.send('Live-action movies based on Video Games and produced in the US from the last 10 years.');
 });
+
+app.use(morgan('common'));
 
 app.use(express.static('public'));
 
