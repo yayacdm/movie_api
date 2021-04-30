@@ -6,73 +6,87 @@ const app = express();
 let movies = [
   {
     title: 'Resident Evil: Retribution',
+		year: '2012',
     publisher: 'Capcom',
-		year: '2012'
+		director: 'Paul W. S. Anderson'
   },
   {
     title: 'Silent Hill: Revelation',
+		year: '2012',
     publisher: 'Konami',
-		year: '2012'
+		director: 'M. J. Bassett'
   },
   {
     title: 'Need For Speed',
+		year: '2014',
     publisher: 'Electronic Arts',
-		year: '2014'
+		director: 'Scott Waugh'
   },
 	{
     title: 'Hitman: Agent 47',
+		year: '2015',
     publisher: 'Square Enix',
-		year: '2015'
+		director: 'Aleksander Bach'
   },
   {
     title: 'Warcraft',
+		year: '2016',
     publisher: 'Blizzard Entertainment',
-		year: '2016'
+		director: 'Duncan Jones'
   },
   {
     title: 'Assassin\'s Creed',
+		year: '2016',
     publisher: 'Ubisoft',
-		year: '2016'
+		director: 'Justin Kurzel'
   },
 	{
     title: 'Resident Evil: The Final Chapter',
+		year: '2017',
     publisher: 'Capcom',
-		year: '2017'
+		director: 'Paul W. S. Anderson'
   },
   {
     title: 'Tomb Raider',
+		year: '2018',
     publisher: 'Square Enix',
-		year: '2018'
+		director: 'Roar Uthaug'
   },
   {
     title: 'Rampage',
+		year: '2018',
     publisher: 'Midway',
-		year: '2018'
+		director: 'Brad Peyton'
   },
 	{
     title: 'Dead Trigger',
+		year: '2019',
     publisher: 'Madfinger Games',
-		year: '2019'
+		director: 'Mike Cuff'
   },
   {
     title: 'Detective Pikachu',
+		year: '2019',
     publisher: 'Nintendo',
-		year: '2019'
+		director: 'Rob Letterman'
   },
   {
     title: 'Sonic The Hedgehog',
+		year: '2020',
     publisher: 'Sega',
-		year: '2020'
+		director: 'Jeff Fowler'
   },
 	{
 		title: 'Monster Hunter',
+		year: '2020',
 		publisher: 'Capcom',
-		year: '2020'
+		director: 'Paul W. S. Anderson'
 	},
 	{
 		title: 'Mortal Kombat',
+		year: '2021',
 		publisher: 'WB Games',
-		year: '2021'
+		director: 'Simon McQuoid'
 	}
 ];
 
@@ -90,39 +104,7 @@ app.get('/movies', (req, res) => {
 });
 
 app.get('/movies/[ID]', (req, res) => {
-  res.send('Successful GET request returning data on a single movie');
-});
-
-app.get('/genres', (req, res) => {
-  res.send('Successful GET request returning data on genres');
-});
-
-app.get('/directors/[ID]', (req, res) => {
-  res.send('Successful GET request returning data on a single director');
-});
-
-app.get('/movies/[ID]', (req, res) => {
-  res.send('Successful GET request returning data on a single movie');
-});
-
-app.post('/users', (req, res) => {
-  res.send('Successful POST request registering new user');
-});
-
-app.put('/users/[ID]', (req, res) => {
-  res.send('Successful PUT request updating user info');
-});
-
-app.post('/users/favs', (req, res) => {
-  res.send('Successful POST request adding movie to favorites list');
-});
-
-app.delete('/users/favs', (req, res) => {
-  res.send('Successful POST request removing movie from favorites list');
-});
-
-app.delete('/users', (req, res) => {
-  res.send('Successful DELETE request removing user');
+  res.json();
 });
 
 app.use((err, req, res, next) => {
