@@ -89,6 +89,42 @@ app.get('/movies', (req, res) => {
   res.json(movies);
 });
 
+app.get('/movies/[ID]', (req, res) => {
+  res.send('Successful GET request returning data on a single movie');
+});
+
+app.get('/genres', (req, res) => {
+  res.send('Successful GET request returning data on genres');
+});
+
+app.get('/directors/[ID]', (req, res) => {
+  res.send('Successful GET request returning data on a single director');
+});
+
+app.get('/movies/[ID]', (req, res) => {
+  res.send('Successful GET request returning data on a single movie');
+});
+
+app.post('/users', (req, res) => {
+  res.send('Successful POST request registering new user');
+});
+
+app.put('/users/[ID]', (req, res) => {
+  res.send('Successful PUT request updating user info');
+});
+
+app.post('/users/favs', (req, res) => {
+  res.send('Successful POST request adding movie to favorites list');
+});
+
+app.delete('/users/favs', (req, res) => {
+  res.send('Successful POST request removing movie from favorites list');
+});
+
+app.delete('/users', (req, res) => {
+  res.send('Successful DELETE request removing user');
+});
+
 app.use((err, req, res, next) => {
   console.error(err.stack);
   res.status(500).send('Uh-oh! Something went wrong!');
