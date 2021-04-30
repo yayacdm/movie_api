@@ -11,5 +11,64 @@
 		<p>In this project, I will be builing the server-side component of a movie database web application. This web application will provide users with access to information about different movies, directors, and genres. Users can sign up, update their personal info, and create lists of all their favorite movies.</p>
 
 		<p>We will be creating a REST API using the MERN stack. (MongoDB, Express, React, and Node.JS)</p>
+
+		<div class ='table-wrapper'>
+			<table>
+				<thead>
+					<tr>
+						<th>Request</th>
+						<th>URL</th>
+						<th>HTTP Method</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>Return a list of ALL movies to the user</td>
+						<td>/movies</td>
+						<td>GET</td>
+					</tr>
+					<tr>
+						<td>Return data about a single movie by title to the user</td>
+						<td>/movies/[ID]</td>
+						<td>GET</td>
+					</tr>
+					<tr>
+						<td>Return data about a genre by name/title</td>
+						<td>/genres</td>
+						<td>GET</td>
+					</tr>
+					<tr>
+						<td>Return data about a director by name</td>
+						<td>/directors</td>
+						<td>GET</td>
+					</tr>
+					<tr>
+						<td>Allow new users to register</td>
+						<td>/users</td>
+						<td>POST</td>
+					</tr>
+					<tr>
+						<td>Allow users to update their user info</td>
+						<td>/users/[ID]</td>
+						<td>PUT</td>
+					</tr>
+					<tr>
+						<td>Allow users to add a movie to their list of favorites</td>
+						<td>/users/favs</td>
+						<td>POST</td>
+					</tr>
+					<tr>
+						<td>Allow users to remove a movie from their list of favorites</td>
+						<td>/users/favs</td>
+						<td>DELETE</td>
+					</tr>
+					<tr>
+						<td>Allow existing users to deregister</td>
+						<td>/users</td>
+						<td>DELETE</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</body>
 </html>
