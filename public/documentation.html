@@ -12,6 +12,8 @@
 
 		<p>We will be creating a REST API using the MERN stack. (MongoDB, Express, React, and Node.JS)</p>
 
+		<p></p>
+
 		<div class ='table-wrapper'>
 			<table>
 				<thead>
@@ -19,6 +21,8 @@
 						<th>Request</th>
 						<th>URL</th>
 						<th>HTTP Method</th>
+						<th>Request Body</th>
+						<th>Response Body</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -26,46 +30,64 @@
 						<td>Return a list of ALL movies to the user</td>
 						<td>/movies</td>
 						<td>GET</td>
+						<td>None</td>
+						<td>JSON object holding data about all movies</td>
 					</tr>
 					<tr>
 						<td>Return data about a single movie by title to the user</td>
 						<td>/movies/[ID]</td>
 						<td>GET</td>
+						<td>None</td>
+						<td>JSON object holding data about selected movie</td>
 					</tr>
 					<tr>
 						<td>Return data about a genre by name/title</td>
 						<td>/genres</td>
 						<td>GET</td>
+						<td>None</td>
+						<td>Returns information about genres selected</td>
 					</tr>
 					<tr>
 						<td>Return data about a director by name</td>
-						<td>/directors</td>
+						<td>/directors/[ID]</td>
 						<td>GET</td>
+						<td>None</td>
+						<td>Returns JSON object about selected director</td>
 					</tr>
 					<tr>
 						<td>Allow new users to register</td>
 						<td>/users</td>
 						<td>POST</td>
+						<td>JSON object holding data about new user (name, email)</td>
+						<td>JSON object holding data about new user, including UUID</td>
 					</tr>
 					<tr>
 						<td>Allow users to update their user info</td>
 						<td>/users/[ID]</td>
 						<td>PUT</td>
+						<td>None</td>
+						<td>Text notifying successful update of user info</td>
 					</tr>
 					<tr>
 						<td>Allow users to add a movie to their list of favorites</td>
 						<td>/users/favs</td>
 						<td>POST</td>
+						<td>None</td>
+						<td>Text notifying successful addition to favorites</td>
 					</tr>
 					<tr>
 						<td>Allow users to remove a movie from their list of favorites</td>
 						<td>/users/favs</td>
 						<td>DELETE</td>
+						<td>None</td>
+						<td>Text notifying successful removal of favorite</td>
 					</tr>
 					<tr>
 						<td>Allow existing users to deregister</td>
 						<td>/users</td>
 						<td>DELETE</td>
+						<td>None</td>
+						<td>Text notifying successful deletion</td>
 					</tr>
 				</tbody>
 			</table>
