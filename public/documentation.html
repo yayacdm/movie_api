@@ -3,6 +3,12 @@
 	<head>
 		<meta charset='utf-8'>
 		<title>myFlix Documentation</title>
+		<style>
+			table, th, td {
+				border: 1px solid black;
+				border-collapse: collapse;
+			}
+		</style>
 	</head>
 
 	<body>
@@ -58,35 +64,69 @@
 						<td>Allow new users to register</td>
 						<td>/users</td>
 						<td>POST</td>
-						<td>JSON object holding data about new user (name, email)</td>
-						<td>JSON object holding data about new user, including UUID</td>
+						<td>JSON object holding data about new user:<br>
+							<em>
+							Username: req.body.Username,<br>
+							Password: req.body.Password,<br>
+							Email: req.body.Email,<br>
+							Birthday: req.body.Birthday<br>
+							</em>
+						</td>
+						<td>Returns JSON in this format:<br>
+						  <em>
+							ID: Integer <br>
+						  Username: String <br>
+						  Password: String <br>
+						  Email: String <br>
+						  Birthday: Date
+							</em>
+						</td>
 					</tr>
 					<tr>
 						<td>Allow users to update their user info</td>
-						<td>/users/[ID]</td>
+						<td>/users/:Username</td>
 						<td>PUT</td>
-						<td>None</td>
-						<td>Text notifying successful update of user info</td>
+						<td>JSON object holding data to be updated:<br>
+							<em>
+							Username: req.body.Username,<br>
+					    Password: req.body.Password,<br>
+					    Email: req.body.Email,<br>
+					    Birthday: req.body.Birthday<br>
+							</em>
+						</td>
+						<td>Returns JSON in this format:<br>
+						  <em>
+							Username: String (required)<br>
+						  Password: String (required)<br>
+						  Email: String (required)<br>
+						  Birthday: Date<br>
+							</em>
+						</td>
 					</tr>
 					<tr>
 						<td>Allow users to add a movie to their list of favorites</td>
 						<td>/users/favs</td>
 						<td>POST</td>
-						<td>None</td>
+						<td>
+							<em>
+							Username: req.params.Username<br>
+					    FavoriteMovies: req.params.MovieID<br>
+							</em>
+						</td>
 						<td>Text notifying successful addition to favorites</td>
 					</tr>
 					<tr>
 						<td>Allow users to remove a movie from their list of favorites</td>
-						<td>/users/favs</td>
+						<td>/users/:Username/Movies/:MovieID</td>
 						<td>DELETE</td>
 						<td>None</td>
 						<td>Text notifying successful removal of favorite</td>
 					</tr>
 					<tr>
 						<td>Allow existing users to deregister</td>
-						<td>/users</td>
+						<td>/users/:Username</td>
 						<td>DELETE</td>
-						<td>None</td>
+						<td><em>Username: req.params.Username</em></td>
 						<td>Text notifying successful deletion</td>
 					</tr>
 				</tbody>
