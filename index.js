@@ -28,6 +28,18 @@ app.use(morgan('common'));
 
 app.use(express.static('public'));
 
+// GET all movies
+app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
+  Movies.find()
+    .then((movies) => {
+      res.status(201).json(movies);
+    })
+    .catch((error) => {
+      console.error(error);
+      res.status(500).send('Error: ' + error);
+    });
+});
+
 // GET all users
 app.get('/users', (req, res) => {
   Users.find()
