@@ -19,14 +19,14 @@ const Users = Models.User;
 
 mongoose.connect('mongodb://localhost:27017/myFlixDB', { useNewUrlParser: true, useUnifiedTopology: true });
 
+app.use(morgan('common'));
+
+app.use(express.static('public'));
+
 // GET REQUESTS
 app.get('/', (req, res) => {
   res.send('Live-action movies based on Video Games and produced in the US from the last 10 years.');
 });
-
-app.use(morgan('common'));
-
-app.use(express.static('public'));
 
 // GET all movies
 app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) => {
