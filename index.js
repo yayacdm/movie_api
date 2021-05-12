@@ -34,9 +34,9 @@ app.get('/movies', passport.authenticate('jwt', { session: false }), (req, res) 
     .then((movies) => {
       res.status(201).json(movies);
     })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
     });
 });
 
@@ -46,9 +46,9 @@ app.get('/users', passport.authenticate('jwt', { session: false }), (req, res) =
     .then((users) => {
       res.status(201).json(users);
     })
-    .catch((error) => {
-      console.error(error);
-      res.status(500).send('Error: ' + error);
+    .catch((err) => {
+      console.error(err);
+      res.status(500).send('Error: ' + err);
     });
 });
 
