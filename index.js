@@ -6,6 +6,11 @@ const bodyParser = require('body-parser');
 const app = express();
 app.use(bodyParser.json());
 
+let auth = require('./auth')(app);
+
+const passport = require('passport');
+require('./passport');
+
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 
