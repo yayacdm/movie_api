@@ -14,6 +14,8 @@ app.use(cors());
 const passport = require('passport');
 require('./passport');
 
+const { check, validationResult } = require('express-validator');
+
 const mongoose = require('mongoose');
 const Models = require('./models.js');
 
